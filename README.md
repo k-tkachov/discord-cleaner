@@ -13,5 +13,5 @@ Because you don't want to get canceled in 10 years for some message you left in 
 
 ## TODOs and notes:
 - For recent messages (no older than 2 weeks), we can use bulk deletion endpoint;
-- Rate limiter (or Discord's API) sometimes misbehaves;
+- Rate limiter (or Discord's API) sometimes misbehaves. You can use TIME_BETWEEN_REQUESTS (in milliseconds) env variable to adjust the rate;
 - Stay calm. The script will run again and again if a 429 error occurs.
