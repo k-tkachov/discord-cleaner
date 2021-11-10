@@ -51,7 +51,7 @@ const deleteMessages = async ({ channelId, messages }) => {
 
     try {
         const currentMessageId = messages.shift();
-        axios.setRateLimitOptions({ maxRequests: 1, perMilliseconds: 500 });
+        axios.setRateLimitOptions({ maxRequests: 1, perMilliseconds: process.env.TIME_BETWEEN_REQUESTS });
         await axios.delete(getDeleteMessageUrl({ channelId, messageId: currentMessageId }));
         console.log(`Message #${currentMessageId} in channel #${channelId} was successfully deleted`);
         await deleteMessages({ channelId, messages });
