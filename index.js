@@ -77,9 +77,9 @@ const deleteMessagesInChannels = async () => {
     }
 
     if (rateLimitErrors) {
+        console.log('Run again to process all cancelled request. The number of failed requests:', failedRequests);
         rateLimitErrors = 0;
         failedRequests = 0;
-        console.log('Run again to process all cancelled request. The number of failed requests:', failedRequests);
         await deleteMessagesInChannels();
     }
 }
